@@ -1,0 +1,5 @@
+loop_rate: 100
+input_scans:
+- /robot_2/sick_front/scan
+- /robot_2/sick_back/scan
+name: robot_2

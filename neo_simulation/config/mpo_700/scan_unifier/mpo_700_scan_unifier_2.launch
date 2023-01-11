@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<launch>
+	<!-- parameters -->
+	<rosparam command="load" ns="robot_2/cob_scan_unifier" file="$(find neo_simulation)/config/mpo_700/scan_unifier/unifier_2.yaml"/>
+	<!-- start node -->
+	<node pkg="cob_scan_unifier" type="scan_unifier_node" name="scan_unifier_node_2" ns="robot_2/cob_scan_unifier" respawn="false" output="screen" >
+	</node>
+
+</launch>

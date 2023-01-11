@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+
+<launch>
+
+
+
+  <node pkg="amcl" type="amcl" name="amcl_1">
+	<!--<remap from="scan" to="/sick_front/scan"/>-->
+  	<remap from="scan" to="robot_1/cob_scan_unifier/scan_unified"/>
+  	<rosparam file="$(find neo_simulation)/config/mpo_700/amcl/amcl_config_1.yaml" command="load" />
+  </node>
+
+</launch>

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launch>
+
+  <arg name="world_name_global" default="worlds/empty.world"/>
+  <arg name="rviz" value="false"/>
+  <arg name="scanunifier" value="true"/>
+
+  <arg name="world" default="empty"/>
+  <arg name="paused" default="false"/>
+  <arg name="use_sim_time" default="true"/>
+  <arg name="gui" default="true"/>
+  <arg name="headless" default="false"/>
+  <arg name="debug" default="false"/>
+
+  <arg name="first_bot"  default="robot_1"/>
+  <arg name="second_bot" default="robot_2"/>
+
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="world_name" value="$(arg world_name_global)"/>
+    <arg name="paused" value="$(arg paused)"/>
+    <arg name="use_sim_time" value="$(arg use_sim_time)"/>
+    <arg name="gui" value="$(arg gui)"/>
+    <arg name="headless" value="$(arg headless)"/>
+    <arg name="debug" value="$(arg debug)"/>
+  </include>
+<!---=================================================================================================================================================================-->
+
+<group ns = "$(arg first_bot)">
+    <param name="robot_description" command="$(find xacro)/xacro $(find neo_simulation)/robots/mpo_700/mpo_700.urdf.xacro botname:=$(arg first_bot)" />
+
+    <node pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher" output="screen">
+      <param name="publish_frequency" value="20.0"/>
+      <param name="tf_prefix" value="$(arg first_bot)" />
+    </node>
+
+    <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher">
+    <param name="rate" value="20.0"/>
+    <param name="tf_prefix" value="$(arg first_bot)" />
+    </node>
+
+    <node name="spawn_robot1" pkg="gazebo_ros" type="spawn_model" output="screen" args="-x -5.5 -y -9.2 -Y 1.5707 -urdf -param robot_description -model mpo_700_1" />
+</group>
+
+
+<group ns = "$(arg second_bot)">
+    <param name="robot_description" command="$(find xacro)/xacro $(find neo_simulation)/robots/mpo_700/mpo_700.urdf.xacro botname:=$(arg second_bot)" />
+
+    <node pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher" output="screen">
+      <param name="publish_frequency" value="20.0"/>
+      <param name="tf_prefix" value="$(arg second_bot)" />
+    </node>
+
+    <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher">
+    <param name="rate" value="20.0"/>
+    <param name="tf_prefix" value="$(arg second_bot)" />
+    </node>
+
+    <node name="spawn_robot2" pkg="gazebo_ros" type="spawn_model" output="screen" args="-x -4.5 -y -8.2 -Y 1.5707 -urdf -param robot_description -model mpo_700_2" />
+</group>
+
+<node name="robot_1_odom_map" pkg="tf" type="static_transform_publisher" args="0 0 0 0 0 0 map robot_1/odom 100">
+</node>
+
+<node name="robot_2_odom_map" pkg="tf" type="static_transform_publisher" args="0 0 0 0 0 0 map robot_2/odom 100">
+</node>
+
+<group if="$(arg scanunifier)">
+<include file="$(find neo_simulation)/config/mpo_700/scan_unifier/mpo_700_scan_unifier_1.launch"/>
+<include file="$(find neo_simulation)/config/mpo_700/scan_unifier/mpo_700_scan_unifier_2.launch"/>
+</group>
+
+<!---=================================================================================================================================================================-->
+
+</launch>
