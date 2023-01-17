@@ -22,27 +22,42 @@
      -->
        <remap from="map" to="map" />
        <remap from="/move_base_simple/goal"                                           to="/robot_1/move_base_simple/goal" />
+       <remap from="/move_base/goal"                                                  to="/robot_1/move_base/goal" />
+       <remap from="/move_base/cancel"                                                to="/robot_1/move_base/cancel" />
+       <remap from="/move_base/current_goal"                                          to="/robot_1/move_base/current_goal" />
+       <remap from="/move_base/feedback"                                              to="/robot_1/move_base/feedback" />
+       <remap from="/move_base/parameter_descriptions"                                to="/robot_1/move_base/parameter_descriptions" />
+       <remap from="/move_base/parameter_updates"                                     to="/robot_1/move_base/parameter_updates" />
+       <remap from="/move_base/result"                                                to="/robot_1/move_base/result" />
+       <remap from="/move_base/status"                                                to="/robot_1/move_base/status" />
+       <remap from="/move_base_simple/goal"                                           to="/robot_1/move_base_simple/goal" />
+
        <remap from="/move_base/TebLocalPlannerROS/global_plan"                        to="/robot_1/move_base/TebLocalPlannerROS/global_plan" />
        <remap from="/move_base/TebLocalPlannerROS/local_plan"                         to="/robot_1/move_base/TebLocalPlannerROS/local_plan" />
        <remap from="/move_base/TebLocalPlannerROS/teb_markers"                        to="/robot_1/move_base/TebLocalPlannerROS/teb_markers" />
        <remap from="/move_base/TebLocalPlannerROS/teb_markers_array"                  to="/robot_1/move_base/TebLocalPlannerROS/teb_markers_array" />
        <remap from="/move_base/TebLocalPlannerROS/teb_poses"                          to="/robot_1/move_base/TebLocalPlannerROS/teb_poses" />
-       <remap from="/move_base/global_costmap/costmap"                                to="/robot_1/move_base/global_costmap/costmap" />
-       <remap from="/move_base/global_costmap/costmap_updates"                        to="/robot_1/move_base/global_costmap/costmap_updates" />
-       <remap from="/move_base/local_costmap/costmap"                                 to="/robot_1/move_base/local_costmap/costmap" />
-       <remap from="/move_base/local_costmap/costmap_updates"                         to="/robot_1/move_base/local_costmap/costmap_updates" />
-       <remap from="/move_base/local_costmap/footprint"                               to="/robot_1/move_base/local_costmap/footprint" />
+       <remap from="/move_base/TebLocalPlannerROS/obstacles"                          to="/robot_1/move_base/TebLocalPlannerROS/obstacles" />
+       <remap from="/move_base/TebLocalPlannerROS/parameter_descriptions"             to="/robot_1/move_base/TebLocalPlannerROS/parameter_descriptions" />
+       <remap from="/move_base/TebLocalPlannerROS/parameter_updates"                  to="/robot_1/move_base/TebLocalPlannerROS/parameter_updates" />
 
        <remap from="/move_base/GlobalPlanner/parameter_descriptions"                  to="/robot_1/move_base/GlobalPlanner/parameter_descriptions" />
        <remap from="/move_base/GlobalPlanner/parameter_updates"                       to="/robot_1/move_base/GlobalPlanner/parameter_updates" />
        <remap from="/move_base/GlobalPlanner/plan"                                    to="/robot_1/move_base/GlobalPlanner/plan" />
        <remap from="/move_base/GlobalPlanner/potential"                               to="/robot_1/move_base/GlobalPlanner/potential" />
-       <remap from="/move_base/TebLocalPlannerROS/obstacles"                          to="/robot_1/move_base/TebLocalPlannerROS/obstacles" />
-       <remap from="/move_base/TebLocalPlannerROS/parameter_descriptions"             to="/robot_1/move_base/TebLocalPlannerROS/parameter_descriptions" />
-       <remap from="/move_base/TebLocalPlannerROS/parameter_updates"                  to="/robot_1/move_base/TebLocalPlannerROS/parameter_updates" />
-       <remap from="/move_base/cancel"                                                to="/robot_1/move_base/cancel" />
-       <remap from="/move_base/current_goal"                                          to="/robot_1/move_base/current_goal" />
-       <remap from="/move_base/feedback"                                              to="/robot_1/move_base/feedback" />
+
+       <remap from="/move_base/local_costmap/costmap"                                 to="/robot_1/move_base/local_costmap/costmap" />
+       <remap from="/move_base/local_costmap/costmap_updates"                         to="/robot_1/move_base/local_costmap/costmap_updates" />
+       <remap from="/move_base/local_costmap/footprint"                               to="/robot_1/move_base/local_costmap/footprint" />
+       <remap from="/move_base/local_costmap/obstacle_layer/parameter_descriptions"   to="/robot_1/move_base/local_costmap/obstacle_layer/parameter_descriptions" />
+       <remap from="/move_base/local_costmap/obstacle_layer/parameter_updates"        to="/robot_1/move_base/local_costmap/obstacle_layer/parameter_updates" />
+       <remap from="/move_base/local_costmap/parameter_descriptions"                  to="/robot_1/move_base/local_costmap/parameter_descriptions" />
+       <remap from="/move_base/local_costmap/parameter_updates"                       to="/robot_1/move_base/local_costmap/parameter_updates" />
+       <remap from="/move_base/local_costmap/static_layer/parameter_descriptions"     to="/robot_1/move_base/local_costmap/static_layer/parameter_descriptions" />
+       <remap from="/move_base/local_costmap/static_layer/parameter_updates"          to="/robot_1/move_base/local_costmap/static_layer/parameter_updates" />
+
+       <remap from="/move_base/global_costmap/costmap"                                to="/robot_1/move_base/global_costmap/costmap" />
+       <remap from="/move_base/global_costmap/costmap_updates"                        to="/robot_1/move_base/global_costmap/costmap_updates" />
        <remap from="/move_base/global_costmap/footprint"                              to="/robot_1/move_base/global_costmap/footprint" />
        <remap from="/move_base/global_costmap/inflation_layer/parameter_descriptions" to="/robot_1/move_base/global_costmap/inflation_layer/parameter_descriptions" />
        <remap from="/move_base/global_costmap/inflation_layer/parameter_updates"      to="/robot_1/move_base/global_costmap/inflation_layer/parameter_updates" />
@@ -53,18 +68,7 @@
        <remap from="/move_base/global_costmap/parameter_updates"                      to="/robot_1/move_base/global_costmap/parameter_updates" />
        <remap from="/move_base/global_costmap/static_layer/parameter_descriptions"    to="/robot_1/move_base/global_costmap/static_layer/parameter_descriptions" />
        <remap from="/move_base/global_costmap/static_layer/parameter_updates"         to="/robot_1/move_base/global_costmap/static_layer/parameter_updates" />
-       <remap from="/move_base/goal"                                                  to="/robot_1/move_base/goal" />
-       <remap from="/move_base/local_costmap/obstacle_layer/parameter_descriptions"   to="/robot_1/move_base/local_costmap/obstacle_layer/parameter_descriptions" />
-       <remap from="/move_base/local_costmap/obstacle_layer/parameter_updates"        to="/robot_1/move_base/local_costmap/obstacle_layer/parameter_updates" />
-       <remap from="/move_base/local_costmap/parameter_descriptions"                  to="/robot_1/move_base/local_costmap/parameter_descriptions" />
-       <remap from="/move_base/local_costmap/parameter_updates"                       to="/robot_1/move_base/local_costmap/parameter_updates" />
-       <remap from="/move_base/local_costmap/static_layer/parameter_descriptions"     to="/robot_1/move_base/local_costmap/static_layer/parameter_descriptions" />
-       <remap from="/move_base/local_costmap/static_layer/parameter_updates"          to="/robot_1/move_base/local_costmap/static_layer/parameter_updates" />
-       <remap from="/move_base/parameter_descriptions"                                to="/robot_1/move_base/parameter_descriptions" />
-       <remap from="/move_base/parameter_updates"                                     to="/robot_1/move_base/parameter_updates" />
-       <remap from="/move_base/result"                                                to="/robot_1/move_base/result" />
-       <remap from="/move_base/status"                                                to="/robot_1/move_base/status" />
-       <remap from="/move_base_simple/goal"                                           to="/robot_1/move_base_simple/goal" />
+
 
     <!-- Costmaps -->
     <!-- <rosparam file="$(find neo_simulation)/config/mpo_700/move_base/costmaps/costmap_common.yaml" command="load" ns="global_costmap" />
@@ -74,16 +78,16 @@
 
 
     <!-- Here we try to imitate the launch file foud in teh husky stack -->
-    <rosparam file="$(find neo_simulation)/config/mpo_700/move_base/costmaps/costmap_common.yaml" command="load" ns="global_costmap_1" />
-    <rosparam file="$(find neo_simulation)/config/mpo_700/move_base/costmaps/costmap_common.yaml" command="load" ns="local_costmap_1" />
+    <rosparam file="$(find neo_simulation)/config/mpo_700/move_base/costmaps/costmap_common.yaml" command="load"/>
+    <rosparam file="$(find neo_simulation)/config/mpo_700/move_base/costmaps/costmap_common.yaml" command="load"/>
 
 
      <!-- We must specifiy the size of the local costmap -->
-    <rosparam file="$(find neo_simulation)/config/mpo_700/move_base/costmaps/costmap_local.yaml" command="load" ns="local_costmap_1"/>
+    <rosparam file="$(find neo_simulation)/config/mpo_700/move_base/costmaps/costmap_local.yaml" command="load"/>
     <param name="local_costmap/width" value="5.0"/>
     <param name="local_costmap/height" value="5.0"/>
 
-    <rosparam file="$(find neo_simulation)/config/mpo_700/move_base/costmaps/costmap_global.yaml" command="load" ns="global_costmap_1"/>
+    <rosparam file="$(find neo_simulation)/config/mpo_700/move_base/costmaps/costmap_global.yaml" command="load"/>
 
 
 
